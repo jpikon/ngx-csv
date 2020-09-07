@@ -2,5 +2,41 @@
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
   "newProjectRoot": "projects",
-  "projects": {}
+  "projects": {
+    "ngx-csv": {
+      "projectType": "library",
+      "root": "projects/ngx-csv",
+      "sourceRoot": "projects/ngx-csv/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ngx-csv/tsconfig.lib.json",
+            "project": "projects/ngx-csv/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-csv/src/test.ts",
+            "tsConfig": "projects/ngx-csv/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-csv/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ngx-csv/tsconfig.lib.json",
+              "projects/ngx-csv/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }},
+  "defaultProject": "ngx-csv"
 }

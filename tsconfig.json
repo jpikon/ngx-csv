@@ -17,6 +17,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ngx-csv": [
+        "dist/ngx-csv"
+      ],
+      "ngx-csv/*": [
+        "dist/ngx-csv/*"
+      ]
+    }
   }
 }
